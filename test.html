@@ -5,9 +5,9 @@
 	<meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1">
 </head>
 <body>
-    <p>Hello World! I am trying to test a flow!!!<p>
+    <p>Hello World! I am trying to test the inbound guest appointment flow!!!<p>
 	
-	<style type='text/css'>
+<style type='text/css'>
 	.embeddedServiceHelpButton .helpButton .uiButton {
 		background-color: #005290;
 		font-family: "Arial", sans-serif;
@@ -34,14 +34,18 @@
 		embedded_svc.settings.enabledFeatures = ['FieldService'];
 		embedded_svc.settings.entryFeature = 'FieldService';
 
-		embedded_svc.settings.useCustomAuthentication = true;
+		embedded_svc.settings.useCustomAuthentication = false;
+		embedded_svc.settings.loginClientId = '';
+		embedded_svc.settings.loginRedirectURL = '';
+		embedded_svc.settings.loginTargetQuerySelector = '';
+		embedded_svc.settings.authenticationStartLabel = '';
 
 		embedded_svc.init(
-			'https://katziontechnologysolutionsptyltd--katziondms.my.salesforce.com',
-			'https://katziondms-dealercallback.cs75.force.com/testFlow',
+			'https://katziontechnologysolutionsptyltd--poonamdev.my.salesforce.com',
+			'https://poonamdev-inboundguestappointmentflow.cs76.force.com',
 			gslbBaseURL,
-			'00D0w0000008h7Q',
-			'Inbound_Guest_Appointment_FlowES',
+			'00D9D0000008fmG',
+			'InboundGuestAppointmentFlow_ES',
 			{
 				
 			}
@@ -50,7 +54,7 @@
 
 	if (!window.embedded_svc) {
 		var s = document.createElement('script');
-		s.setAttribute('src', 'https://katziontechnologysolutionsptyltd--katziondms.my.salesforce.com/embeddedservice/5.0/esw.min.js');
+		s.setAttribute('src', 'https://katziontechnologysolutionsptyltd--poonamdev.my.salesforce.com/embeddedservice/5.0/esw.min.js');
 		s.onload = function() {
 			initESW(null);
 		};
